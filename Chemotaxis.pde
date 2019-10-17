@@ -1,13 +1,37 @@
- //declare bacteria variables here   
+ //declare bacteria variables here 
  void setup()   
  {     
+
  	//initialize bacteria variables here   
+ 	size(500, 300);
+	textAlign(CENTER,CENTER);
+	background(220);
+
  }   
  void draw()   
  {    
- 	//move and show the bacteria   
+ 	Bacteria ok = new Bacteria(); 
+ 	ok.walk();
  }  
+
+ void mouseClicked()
+ {
+
+ }
+
  class Bacteria    
  {     
- 	//lots of java!   
+ 	int myX, myY, calar;  
+ 	ellipse(int x, int y) //contructor
+ 	{
+ 		myX = x;
+ 		myY = y;
+ 	}
+ 	void walk()
+ 	{
+ 		double x = x + (int)(Math.random()*3)-1;
+ 		double y = y + (int)(Math.random()*3)-1;
+ 	}
+
+ 	void show()
  }    
