@@ -1,4 +1,5 @@
  //declare bacteria variables here 
+ Bacteria ok = new Bacteria(300,150); 
  void setup()   
  {     
 
@@ -9,29 +10,34 @@
 
  }   
  void draw()   
- {    
- 	Bacteria ok = new Bacteria(); 
+ {   
+ 	fill(255);
  	ok.walk();
+ 	ok.show();
  }  
 
  void mouseClicked()
  {
-
+ 	redraw();
  }
 
  class Bacteria    
  {     
  	int myX, myY, calar;  
- 	ellipse(int x, int y) //contructor
+ 	Bacteria(int x, int y) //contructor
  	{
  		myX = x;
  		myY = y;
+ 		calar = (int)(Math.random()*255);
  	}
  	void walk()
  	{
- 		double x = x + (int)(Math.random()*3)-1;
- 		double y = y + (int)(Math.random()*3)-1;
+ 		myX = (int)(Math.random()*10)-1;
+ 		myY = (int)(Math.random()*10)-1;
  	}
 
  	void show()
+ 	{
+ 		ellipse(myX, myY,20,20);
+ 	}
  }    
