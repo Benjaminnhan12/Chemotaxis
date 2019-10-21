@@ -1,5 +1,5 @@
  //declare bacteria variables here 
- Bacteria ok = new Bacteria(300,150); 
+ Bacteria[] neww = new Bacteria[200];
  void setup()   
  {     
 
@@ -7,13 +7,20 @@
  	size(500, 300);
 	textAlign(CENTER,CENTER);
 	background(220);
-
+	for(int i = 0; i<200; i++){
+		neww[i] = (new Bacteria(width/2,height/2));
+	}
  }   
  void draw()   
  {   
- 	fill(255);
- 	ok.walk();
- 	ok.show();
+ 	background(255);
+ 	for(int k = 0; k<200;k++){
+ 		color col=color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+ 		fill(col);
+ 		noStroke();
+ 		neww[k].walk();
+ 		neww[k].show();
+ 	}
  }  
 
  void mouseClicked()
@@ -32,12 +39,12 @@
  	}
  	void walk()
  	{
- 		myX = (int)(Math.random()*10)-1;
- 		myY = (int)(Math.random()*10)-1;
+ 		myX = myX + (int)(Math.random()*2)-1;
+ 		myY = myY + (int)(Math.random()*2)-1;
  	}
 
  	void show()
  	{
- 		ellipse(myX, myY,20,20);
+ 		ellipse(myX, myY,5,5);
  	}
  }    
