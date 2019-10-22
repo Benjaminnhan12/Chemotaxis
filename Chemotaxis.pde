@@ -1,5 +1,5 @@
  //declare bacteria variables here 
- Bacteria[] neww = new Bacteria[200];
+ Bacteria[] neww = new Bacteria[100];
  void setup()   
  {     
 
@@ -7,16 +7,16 @@
  	size(500, 300);
 	textAlign(CENTER,CENTER);
 	background(220);
-	for(int i = 0; i<200; i++){
-		neww[i] = (new Bacteria(width/2,height/2));
+	for(int i = 0; i<100; i++){
+		neww[i] = (new Bacteria(0,height/2));
 	}
  }   
  void draw()   
  {   
- 	background(255);
- 	for(int k = 0; k<200;k++){
- 		color col=color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
- 		fill(col);
+ 	// background(255);
+ 	for(int k = 0; k<100;k++){
+ 		// color col=color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+ 		// fill(col);
  		noStroke();
  		neww[k].walk();
  		neww[k].show();
@@ -25,26 +25,28 @@
 
  void mouseClicked()
  {
- 	redraw();
+ 	// redraw();
  }
 
  class Bacteria    
  {     
- 	int myX, myY, calar;  
+ 	int myX, myY, col;  
  	Bacteria(int x, int y) //contructor
  	{
  		myX = x;
  		myY = y;
- 		calar = (int)(Math.random()*255);
+ 		// calar = (int)(Math.random()*255);
+ 		col=color((int)(Math.random()*255)+1,(int)(Math.random()*255)+1,(int)(Math.random()*255)+1);
  	}
  	void walk()
  	{
- 		myX = myX + (int)(Math.random()*2)-1;
- 		myY = myY + (int)(Math.random()*2)-1;
+ 		myX = myX + (int)(Math.random()*4)-1;
+ 		myY = myY + (int)(Math.random()*3)-1;
  	}
 
  	void show()
  	{
- 		ellipse(myX, myY,5,5);
+ 		ellipse(myX, myY,3,3);
+ 		fill(col);
  	}
  }    
